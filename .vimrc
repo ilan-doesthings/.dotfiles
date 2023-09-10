@@ -130,8 +130,8 @@ set termguicolors
 set background=dark
 
 "seoul256
-"" let g:seoul256_background = 235
-"" colorscheme seoul256
+let g:seoul256_background = 235
+colorscheme seoul256
 
 " cosmic_latte
 " colorscheme cosmic_latte

@@ -142,3 +142,5 @@ export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
 export VIRTUALENVWRAPPER_PYTHON=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/python
 source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
