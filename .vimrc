@@ -130,20 +130,20 @@ set termguicolors
 set background=dark
 
 "seoul256
-let g:seoul256_background = 235
-colorscheme seoul256
+"" let g:seoul256_background = 235
+"" colorscheme seoul256
 
 " cosmic_latte
 " colorscheme cosmic_latte
 
 " lightline {{{
     " let g:lightline = {'colorscheme': 'cosmic_latte_light'}
-    let g:lightline = {
-      \ 'colorscheme': 'Tomorrow_Night',
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename',
-      \ },
-      \ }
+"" let g:lightline = {
+""   \ 'colorscheme': 'Tomorrow_Night',
+""   \ 'component_function': {
+""   \   'filename': 'LightlineFilename',
+""   \ },
+""   \ }
 
 function! LightlineFilename()
   return &filetype ==# 'vimfiler' ? vimfiler#get_status_string() :
@@ -331,11 +331,11 @@ let python_highlight_all=1
 " let g:ycm_path_to_python_interpreter="/opt/local/bin/python"
 
 " incsearch
-set hlsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
+""set hlsearch
+""map /  <Plug>(incsearch-forward)
+""map ?  <Plug>(incsearch-backward)
+""map g/ <Plug>(incsearch-stay)
+""let g:incsearch#auto_nohlsearch = 1
 
 " resize vim splits
 nnoremap Ó <c-w>5<
