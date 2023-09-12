@@ -160,4 +160,6 @@ export AWS_SESSION_TTL=12h
 
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
+alias apps="cd /server/apps"
+alias dots="cd ~/.dotfiles/"
 
