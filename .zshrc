@@ -103,18 +103,8 @@ zle -N insert-selecta-path-in-command-line
 # Bind the key to the newly created widget
 bindkey "^S" "insert-selecta-path-in-command-line"
 
-
-### function to move into proj directory
-proj() {
-    cd $(find ~/code -maxdepth 1 -type d | selecta)
-}
-
 ### notify when something ends
 alias notify="osascript -e 'display notification \"Done\" with title \"Done\"'"
-
-### Androids
-export PATH=${PATH}:/Users/bruno/Library/Android/sdk/platform-tools:/Users/bruno/Library/Android/sdk/tools:/Users/bruno/code/apache-ant-1.9.4/bin
-
 
 # MacPorts Installer addition on 2015-11-30_at_12:00:27: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
@@ -127,7 +117,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/opt/local/bin:$PATH
 export PATH=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/:$PATH
 source /server/apps/ometria.deployment/source/dev
-ssh-add ~/.ssh/Ometria_Bastion_Bruno.pem 2>/dev/null
 
 tossh() {
     ssh ec2-user@`ec2-ip $1`
@@ -143,4 +132,32 @@ mkdir -p $WORKON_HOME
 export VIRTUALENVWRAPPER_PYTHON=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/python
 source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
+
+# Local ecomm postgres stuff
+function om-ecomm () {
+    if [[ -z "$@" ]]; then
+        pgcli -h localhost -U postgres ometria_ecomm
+    else
+        psql -h localhost -U postgres ometria_ecomm $@
+    fi
+}
+function om-core () {
+    if [[ -z "$@" ]]; then
+        pgcli -h localhost -U postgres ometria_core
+    else
+        psql -h localhost -U postgres ometria_core $@
+    fi
+}
+
+
+alias om-export="/Users/ilantolman/om-export.sh"
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export AWS_ASSUME_ROLE_TTL=1h
+export AWS_SESSION_TTL=12h 
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
+
+
