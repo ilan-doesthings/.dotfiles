@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'itchyny/lightline.vim'
-Plug 'tmhedberg/SimpylFold'
+" Plug 'tmhedberg/SimpylFold'
 " Plug 'davidhalter/jedi-vim'
 
 Plug 'vim-scripts/twilight256.vim'

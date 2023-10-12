@@ -122,16 +122,11 @@ tossh() {
     ssh ec2-user@`ec2-ip $1`
 }
 
-# source secrets
-source ~/.secrets
-
 # VIRTUALENVWRAPPER
 
 export WORKON_HOME=~/.virtualenvs
 mkdir -p $WORKON_HOME
-export VIRTUALENVWRAPPER_PYTHON=/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/python
-source /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
 
 # Local ecomm postgres stuff
 function om-ecomm () {
@@ -162,4 +157,8 @@ export AWS_SESSION_TTL=12h
 
 alias apps="cd /server/apps"
 alias dots="cd ~/.dotfiles/"
+
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
